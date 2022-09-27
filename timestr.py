@@ -3,15 +3,6 @@ __all__ = (
 )
 
 
-def conver(seconds, times, chr, s):
-    if seconds >= times:
-        a = seconds // times
-        s += "{:02.0f}".format(a) + chr
-        seconds -= a * times
-    elif s:
-        s += f'00'+chr
-    return s, seconds
-
 def seconds_to_str(seconds: int) -> str:
     """
     Функция должна вернуть текстовое представление времени
@@ -21,12 +12,8 @@ def seconds_to_str(seconds: int) -> str:
     3700 -> 01h01m40s
     93600 -> 01d02h00m00s
     """
-    s = ""
-    s, seconds  = conver(seconds, 86400, 'd',s)
-    s, seconds  = conver(seconds, 3600, 'h',s)
-    s, seconds  = conver(seconds, 60, 'm',s)
-    s += "{:02.0f}s".format(seconds)
-    return s
+    raise NotImplementedError
 
-print(seconds_to_str(93600))
+
+
 
